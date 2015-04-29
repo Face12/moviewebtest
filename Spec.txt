@@ -1,0 +1,11 @@
+Scenario Sök
+	1. Söka på filmtitel
+		- Sökfält
+		- Klicka på knapp
+		- Få upp träfflista
+	2. Gå till film
+		- Klicka på länk
+		- Få upp info samt lista med personer
+	3. Gå till person
+		- Klicka på länk
+		- Få upp info

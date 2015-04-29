@@ -24,22 +24,24 @@ public class PlayAroundFF {
 		WebDriver driver = new FirefoxDriver();
 
 		// Go to the Google Suggest home page
-		driver.get("http://www.whatsmyuseragent.com");
+		driver.get("http://localhost:8080/movieweb/movie/start");
 
 		// Enter the query string "Cheese"
-//		WebElement query = driver.findElement(By.name("q"));
-//		query.sendKeys("Cheese");
+		WebElement query = driver.findElement(By.id("searchfield"));
+		query.sendKeys("The usual suspects");
+		
+		driver.findElement(By.id("searchbutton")).click();
 
-//		// Sleep until the div we want is visible or 5 seconds is over
-//		long end = System.currentTimeMillis() + 5000;
-//		while (System.currentTimeMillis() < end) {
-//			WebElement resultsDiv = driver.findElement(By.className("sbdd_b"));
-//
-//			// If results have been returned, the results are displayed in a drop down.
-//			if (resultsDiv.isDisplayed()) {
-//				break;
-//			}
-//		}
+		// Sleep until the div we want is visible or 5 seconds is over
+		long end = System.currentTimeMillis() + 5000;
+		while (System.currentTimeMillis() < end) {
+			WebElement resultsDiv = driver.findElement(By.className("sbdd_b"));
+
+			// If results have been returned, the results are displayed in a drop down.
+			if (resultsDiv.isDisplayed()) {
+				break;
+			}
+		}
 
 		// And now list the suggestions
 		List<WebElement> allSuggestions = driver.findElements(By.xpath("//h2[@class='info']"));
